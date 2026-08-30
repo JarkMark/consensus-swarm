@@ -7,6 +7,9 @@
 # ============================================
 FROM node:20-alpine AS builder
 
+# Use npm mirror
+RUN npm config set registry https://registry.npmmirror.com
+
 # Install pnpm
 RUN npm install -g pnpm@10.24.0
 
